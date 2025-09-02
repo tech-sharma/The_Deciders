@@ -1,0 +1,42 @@
+// Create HTML structure dynamically
+document.body.innerHTML = `
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Cards (JS Only)</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-gray-100 min-h-screen p-6 flex gap-6 justify-center" id="product-container"></body>
+`;
+
+// Products data
+const products = [
+    { id: 1, name: "Laptop", price: 75000, img: "https://via.placeholder.com/150" },
+    { id: 2, name: "Smartphone", price: 35000, img: "https://via.placeholder.com/150" },
+    { id: 3, name: "Headphones", price: 2000, img: "https://via.placeholder.com/150" }
+];
+
+// Get container
+const container = document.getElementById('product-container');
+
+// Create product cards
+products.forEach(product => {
+    const card = document.createElement('div');
+    card.className = "bg-white shadow-lg rounded-xl p-4 w-64 text-center";
+
+    card.innerHTML = `
+        <img src="${product.img}" alt="${product.name}" class="w-32 mx-auto mb-4 rounded">
+        <h2 class="text-lg font-bold">${product.name}</h2>
+        <p class="text-gray-500">₹${product.price}</p>
+        <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            Buy Now
+        </button>
+    `;
+
+    const button = card.querySelector("button");
+    button.addEventListener("click", () => {
+        alert(You clicked Buy Now for ${product.name}!);
+    });
+
+    container.appendChild(card);
+});
