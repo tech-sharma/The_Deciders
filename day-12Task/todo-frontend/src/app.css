@@ -1,0 +1,17 @@
+:root { font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; }
+body { margin: 0; background:#0f172a; color:#e2e8f0; display:flex; justify-content:center; }
+.wrap { width: min(720px, 92%); margin: 48px 0; }
+h1 { margin: 0 0 16px; font-size: 28px; }
+
+.row { display:flex; gap:8px; margin-bottom:16px; }
+input { flex:1; padding:12px 14px; border-radius:12px; border:1px solid #334155; background:#0b1220; color:#e2e8f0; }
+button { padding:12px 16px; border-radius:12px; border:0; background:#3b82f6; color:white; cursor:pointer; }
+button:disabled { opacity:.6; cursor:not-allowed; }
+
+.error { color:#fca5a5; }
+.list { list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+.item { display:flex; align-items:center; gap:10px; padding:12px; border:1px solid #334155; border-radius:14px; background:#0b1220; }
+.item.done .text { text-decoration: line-through; opacity:.7; }
+.chk { border-radius:999px; background:#1f2937; padding:6px 10px; }
+.del { margin-left:auto; background:#ef4444; }
+.empty { opacity:.7; padding:16px; text-align:center; border:1px dashed #334155; border-radius:12px; }
